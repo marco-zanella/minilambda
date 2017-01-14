@@ -45,4 +45,4 @@ And here is how to apply functions (basically, you enclose the function between 
 Of course, you have if-then-else statements:
 > if (8 < 9) then 42 else 24
 
-> 42
+> NUM 42
