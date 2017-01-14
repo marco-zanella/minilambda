@@ -7,5 +7,5 @@ Since it was created in one day, it does not implement additional, fancy feature
 
 ## Examples
 Here are some code examples which can run in Minilambda:
-  >> 42
-  42
+>>> 42
+>> 42
