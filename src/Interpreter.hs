@@ -20,7 +20,7 @@ run code =
 main = do
   code <- getLine
   if code /= "exit" then do
-    putStrLn . show $ (run code)
+    print $ run code
     main
-  else do
-    putStrLn $ "Bye!"
+  else
+    putStrLn "Bye!"

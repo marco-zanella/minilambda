@@ -33,7 +33,7 @@ num n [] = (n, [])
 -- |Recognizes an identifier
 id :: String -> String -> (String, String)
 id i (c : s) =
-  if isAlpha c || isDigit c then
+  if isAlphaNum c then
     Scanner.id (i ++ [c]) s
   else
     (i, c : s)

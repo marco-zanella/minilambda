@@ -74,7 +74,7 @@ parseOp m (Token.RPAR : tokens) = (m, tokens)
 -- |Parses a function application
 parseApp :: AST -> [Token] -> (AST, [Token])
 parseApp m (k : tokens) =
-  if elem k [Token.THEN, Token.ELSE, Token.RPAR, Token.PLUS, Token.MINUS] then
+  if k `elem` [Token.THEN, Token.ELSE, Token.RPAR, Token.PLUS, Token.MINUS] then
     (m, k : tokens)
   else
     let
