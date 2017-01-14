@@ -22,3 +22,27 @@ Here are some code examples which can run in Minilambda:
 > (8 = 9)
 
 > BOOL False
+
+Observe that functions have always one argument and are defined in a lambda-like way:
+> fn x. (x + 1)
+
+> FN "x" (SUM (ID "x") (NUM 1))
+
+To have functions with higher arity, just define a function returning a function (which is "the standard way" in functional languages):
+> fn x. fn y. (x + y)
+
+> FN "x" (FN "y" (SUM (ID "x") (ID "y")))
+
+And here is how to apply functions (basically, you enclose the function between brackets and leave its actual parameter outside):
+> (fn x. (x + 1)) 5
+
+> NUM 6
+
+> ((fn x. fn y. (x + y)) 3 ) 9
+
+> NUM 12
+
+Of course, you have if-then-else statements:
+> if (8 < 9) then 42 else 24
+
+> 42
