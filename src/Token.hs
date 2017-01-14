@@ -5,19 +5,19 @@ module Token (
 
 -- |A token
 data Token =
-    UNIT
-  | ID String
-  | NUM Int
-  | BOOL Bool
-  | FN
-  | DOT
-  | IF
-  | THEN
-  | ELSE
-  | LPAR
-  | RPAR
-  | PLUS
-  | MINUS
-  | LT
-  | EQ
+    UNIT       -- ^ Unit value
+  | ID String  -- ^ Identifier
+  | NUM Int    -- ^ Numeric value
+  | BOOL Bool  -- ^ Boolean value
+  | FN         -- ^ Function symbol
+  | DOT        -- ^ Dot symbol
+  | IF         -- ^ If keyword
+  | THEN       -- ^ Then keyword
+  | ELSE       -- ^ Else keyword
+  | LPAR       -- ^ Left parenthesis '('
+  | RPAR       -- ^ Right parenthesis ')'
+  | PLUS       -- ^ Plus symbol '+'
+  | MINUS      -- ^ Minus symbol '-'
+  | LT         -- ^ Less than symbol '<'
+  | EQ         -- ^ Equality symbol '='
   deriving (Show, Eq)

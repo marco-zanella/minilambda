@@ -10,17 +10,17 @@ import qualified Data.Set as Set
 
 -- |Abstract Syntax Tree
 data AST =
-    UNIT
-  | ID String
-  | NUM Int
-  | BOOL Bool
-  | SUM AST AST
-  | SUB AST AST
-  | LT AST AST
-  | EQ AST AST
-  | IF AST AST AST
-  | FN String AST
-  | APP AST AST
+    UNIT            -- ^ Unit value
+  | ID String       -- ^ Identifier
+  | NUM Int         -- ^ Integer value
+  | BOOL Bool       -- ^ Boolean value
+  | SUM AST AST     -- ^ Sum
+  | SUB AST AST     -- ^ Subtraction
+  | LT AST AST      -- ^ Less than test
+  | EQ AST AST      -- ^ Equality test
+  | IF AST AST AST  -- ^ If-then-else control flow
+  | FN String AST   -- ^ Function declaration
+  | APP AST AST     -- ^ Function application
   deriving (Show, Eq)
 
 
