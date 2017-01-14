@@ -15,3 +15,12 @@ run code =
     (ast, _) = parse . scan $ code
   in
     reduce ast
+
+
+main = do
+  code <- getLine
+  if code /= "exit" then do
+    putStrLn . show $ (run code)
+    main
+  else do
+    putStrLn $ "Bye!"
