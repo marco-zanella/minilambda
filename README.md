@@ -46,3 +46,17 @@ Of course, you have if-then-else statements:
 > if (8 < 9) then 42 else 24
 
 > NUM 42
+
+To quit the interpreter, just say "exit":
+> exit
+
+> Bye!
+
+
+## Installation and usage
+Access src directory and run make to generate minilambda executable:
+> cd src
+
+> make
+
+> ./minilambda
