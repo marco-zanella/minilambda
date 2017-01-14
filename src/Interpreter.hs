@@ -1,5 +1,6 @@
-module Interpreter (
-  run
+module Main (
+  run,
+  main
 ) where
 
 import Scanner
