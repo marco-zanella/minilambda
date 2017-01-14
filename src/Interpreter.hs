@@ -7,15 +7,11 @@ import Parser
 import AST
 import Semantics
 
+
+-- |Runs a piece of code
 run :: String -> AST
 run code =
   let
     (ast, _) = parse . scan $ code
   in
     reduce ast
-
-
-
-sample = "(fn x . if true then x else 8 ) 42"
-
-sum = "fn x . fn y . (x + y)"

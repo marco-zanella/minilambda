@@ -5,6 +5,8 @@ module Parser (
 import Token
 import AST
 
+
+-- |Parses a list of tokens and builds the Abstract Syntax Tree
 parse :: [Token] -> (AST, [Token])
 parse (Token.UNIT : tokens) = (AST.UNIT, tokens)
 
@@ -40,7 +42,7 @@ parse (Token.LPAR : tokens) =
     parseApp n tokens3 
 
 
-
+-- |Parses a binary operation
 parseOp :: AST -> [Token] -> (AST, [Token])
 parseOp m (Token.PLUS : tokens) =
   let
@@ -54,10 +56,22 @@ parseOp m (Token.MINUS : tokens) =
   in
     (AST.SUB m n, tokens2)
 
+parseOp m (Token.LT : tokens) = 
+  let
+    (n, Token.RPAR : tokens2) = parse tokens
+  in
+    (AST.LT m n, tokens2)
+
+parseOp m (Token.EQ : tokens) = 
+  let
+    (n, Token.RPAR : tokens2) = parse tokens
+  in
+    (AST.EQ m n, tokens2)
+
 parseOp m (Token.RPAR : tokens) = (m, tokens)
 
 
-
+-- |Parses a function application
 parseApp :: AST -> [Token] -> (AST, [Token])
 parseApp m (k : tokens) =
   if elem k [Token.THEN, Token.ELSE, Token.RPAR, Token.PLUS, Token.MINUS] then
